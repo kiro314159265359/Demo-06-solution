@@ -393,43 +393,33 @@ namespace Assi_05
             #endregion
 
             #region Q4
-
             try
             {
-                Console.Write("Enter a color name: ");
-
-                string userInput = Console.ReadLine();
-
-                if (Enum.TryParse(userInput, true, out Colors color))
+                string? input = Console.ReadLine();
+                Colors colors;
+                if (Enum.TryParse(input, true, out colors))
                 {
-                    if (color == Colors.Red || color == Colors.Blue || color == Colors.Green)
+                    if (colors == Colors.Red || colors == Colors.Blue || colors == Colors.Green)
                     {
-                        Console.WriteLine($"{color} is a primary color");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"{color} isn't a primary color");
+                        Console.WriteLine($"{colors} is a primary Color");
                     }
                 }
                 else
                 {
-                    Console.WriteLine($"{userInput} is not a valid color");
+                    Console.WriteLine($"{input} is not a valid color");
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine($"Error : {e.Message}");
+                Console.WriteLine($"Error: {e.Message}");
             }
 
-
-          
-
-        #endregion
+            #endregion
 
 
             #endregion
 
 
-}
+        }
     }
 }
